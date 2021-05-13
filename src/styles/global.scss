@@ -1,0 +1,13 @@
+@import "setup/normalize.scss";
+@import "setup/variables.scss";
+
+@import "components/header.scss";
+
+@import "basics/layout.scss";
+@import "basics/buttons.scss";
+
+body {
+  background: $bg-theme-light;
+  background: linear-gradient(90deg, $bg-theme-light 0, #c4caef 58%);
+  color: $color-theme-light;
+}

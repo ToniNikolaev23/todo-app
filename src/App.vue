@@ -2,7 +2,7 @@
   <div>
     <Header />
     <div class="container">
-      Test
+      <h1 class="nety">Test</h1>
     </div>
   </div>
 </template>
@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./public/css/_style.scss";
+// @import "./styles/global.scss";
 </style>
