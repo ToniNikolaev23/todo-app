@@ -15,11 +15,21 @@ export default {
   data() {
     return {
       newListName: "",
+      uid: 0,
     };
   },
   methods: {
     addNewList() {
-      console.log(this.newListName);
+      const listObj = {
+        id: "list-" + this.uid,
+        name: this.newListName,
+        tasks: [],
+      };
+
+      console.log(listObj);
+      this.$store.commit("addNewList", listObj);
+      this.uid++;
+      this.newListName = "";
     },
   },
 };

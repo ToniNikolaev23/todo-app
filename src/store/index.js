@@ -1,12 +1,35 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
-  state: {
+  state() {
+    return {
+      lists: [
+        {
+          id: "default-id",
+          name: "Default Task List",
+          tasks: [
+            {
+              id: "default-task-id-1",
+              name: "First default task",
+              completed: false,
+              label: "high",
+              list_id: "default-id",
+            },
+          ],
+        },
+      ],
+    };
   },
   mutations: {
+    addNewList(state, payload) {
+      state.lists.unshift(payload);
+    },
   },
-  actions: {
+  getters: {
+    listsArray(state) {
+      return state.lists;
+    },
   },
-  modules: {
-  }
-})
+  actions: {},
+  modules: {},
+});

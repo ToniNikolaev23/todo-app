@@ -3,8 +3,8 @@
     <div class="list-box" v-for="(list, index) in lists" :key="list.id">
       <div class="list-name">
         <h2>
-          <span>{{ list.name }}</span
-          ><span
+          {{ list.name }}
+          <span
             ><button @click="editList"><i class="fas fa-edit"></i></button
             ><button @click="removeList(index)">
               <i class="fas fa-minus-circle"></i></button
@@ -34,51 +34,9 @@ export default {
     TaskList,
     TaskForm,
   },
-  data() {
-    return {
-      lists: [
-        {
-          id: "first",
-          name: "First Task List",
-          tasks: [
-            {
-              id: "task-one",
-              name: "First task",
-              completed: true,
-              label: "high",
-            },
-            {
-              id: "task-oneaaaa",
-              name: "First task",
-              completed: false,
-              label: "high",
-            },
-            {
-              id: "task-asdds",
-              name: "First task",
-              completed: true,
-              label: "high",
-            },
-          ],
-        },
-        {
-          id: "second",
-          name: "Second Task List",
-          tasks: [
-            {
-              id: "task-two",
-              name: "Second Task",
-              completed: false,
-              label: "medium",
-            },
-          ],
-        },
-      ],
-    };
-  },
   computed: {
-    completedArray() {
-      return this.lists["tasks"] === true;
+    lists() {
+      return this.$store.getters.listsArray;
     },
   },
   methods: {
