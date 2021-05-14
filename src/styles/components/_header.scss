@@ -5,11 +5,13 @@ header {
   background: rgba(255, 255, 255, 0.7);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  height: 40px;
 }
 
 .theme-switcher-wrap {
   width: 100%;
   text-align: right;
+  margin: 0 15px;
   .theme-switcher {
     display: inline-block;
     cursor: pointer;
@@ -36,4 +38,8 @@ header {
       }
     }
   }
+}
+
+.action-btns {
+  display: flex;
 }

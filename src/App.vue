@@ -2,18 +2,20 @@
   <div>
     <Header />
     <div class="container">
-      <h1 class="nety">Test</h1>
+      <TodoList />
     </div>
   </div>
 </template>
 
 <script>
 import Header from "./components/layouts/Header";
+import TodoList from "./components/lists/TodoList";
 
 export default {
   name: "App",
   components: {
     Header,
+    TodoList,
   },
 };
 </script>
