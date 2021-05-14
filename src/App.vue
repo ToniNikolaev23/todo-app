@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="theme" :class="currentTheme">
     <Header />
     <div class="container">
       <TodoList />
@@ -16,6 +16,11 @@ export default {
   components: {
     Header,
     TodoList,
+  },
+  computed: {
+    currentTheme() {
+      return this.$store.getters.getTheme;
+    },
   },
 };
 </script>

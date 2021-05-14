@@ -12,3 +12,8 @@ body {
   background: linear-gradient(90deg, $bg-theme-light 0, #c4caef 58%);
   color: $color-theme-light;
 }
+
+.theme.theme-dark {
+  background-color: $bg-theme-dark;
+  color: $color-theme-dark;
+}

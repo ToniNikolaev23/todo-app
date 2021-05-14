@@ -1,6 +1,7 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   background: rgba(255, 255, 255, 0.7);
   -webkit-backdrop-filter: blur(10px);
@@ -42,4 +43,20 @@ header {
 
 .action-btns {
   display: flex;
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .todo-name {
+    position: relative;
+  }
+}
+
+.fa-plus-circle {
+  color: green;
+  background: transparent;
+  border: none;
+  font-size: 20px;
 }

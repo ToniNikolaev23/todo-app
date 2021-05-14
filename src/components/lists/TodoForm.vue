@@ -3,10 +3,12 @@
     <input
       type="text"
       name="todo-name"
-      v-model="newListName"
+      v-model.trim="newListName"
       placeholder="Enter your ToDo list name:"
+      class="todo-name"
+      required
     />
-    <button>Create</button>
+    <button><i class="fas fa-plus-circle"></i></button>
   </form>
 </template>
 
@@ -20,13 +22,13 @@ export default {
   },
   methods: {
     addNewList() {
+      if (this.newListName === "") {
+        return null;
+      }
       const listObj = {
         id: "list-" + this.uid,
         name: this.newListName,
-        tasks: [],
       };
-
-      console.log(listObj);
       this.$store.commit("addNewList", listObj);
       this.uid++;
       this.newListName = "";

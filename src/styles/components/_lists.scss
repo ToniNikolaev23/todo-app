@@ -1,6 +1,6 @@
 .todo-form {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .list-wrap {
@@ -48,8 +48,49 @@
       }
     }
   }
+
+  form {
+    width: 100%;
+    display: flex;
+    padding: 5px;
+
+    input,
+    select,
+    button {
+      border: none;
+    }
+    button {
+      margin-left: 5px;
+      background: transparent;
+    }
+  }
+}
+
+.list-task {
+  cursor: pointer;
+  h3 {
+    margin: 5px 5px;
+    padding: 5px;
+    background: white;
+  }
 }
 
 .completed {
   text-decoration: line-through;
+  h3 {
+    background: green;
+    color: white;
+  }
+}
+
+.important {
+  border-left: 4px solid red;
+}
+
+.medium {
+  border-left: 4px solid orange;
+}
+
+.easy {
+  border-left: 4px solid green;
 }

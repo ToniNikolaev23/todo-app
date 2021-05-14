@@ -1,13 +1,18 @@
 <template>
   <form @submit.prevent="addTask">
-    <input type="text" v-model="newTaskName" placeholder="Add new task" />
+    <input
+      type="text"
+      v-model="newTaskName"
+      placeholder="Add new task"
+      required
+    />
 
     <select name="label" id="label" v-model="newLabel">
-      <option value="Easy">Easy</option>
-      <option value="Medium">Medium</option>
-      <option value="Important">Important</option>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="important">Important</option>
     </select>
-    <button>Create</button>
+    <button><i class="fas fa-plus-circle"></i></button>
   </form>
 </template>
 
@@ -17,19 +22,32 @@ export default {
   data() {
     return {
       newTaskName: "",
-      newLabel: "Easy",
+      newLabel: "easy",
+      uid: 0,
     };
+  },
+  computed: {
+    lists() {
+      return this.$store.getters.listsArray;
+    },
   },
   methods: {
     addTask() {
+      const currentList = this.lists.find((list) => list.id === this.id);
       const newTask = {
-        id: "test-id",
+        id: "task-" + currentList.id + this.uid,
         name: this.newTaskName,
         completed: false,
         label: this.newLabel,
+        lists: currentList.id,
       };
 
-      this.$emit("addTask", newTask, this.id);
+      this.$store.commit("addNewTask", newTask);
+
+      this.uid++;
+
+      this.newTaskName = "";
+      this.newLabel = "easy";
     },
   },
 };

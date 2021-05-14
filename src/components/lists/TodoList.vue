@@ -11,16 +11,16 @@
           ></span>
         </h2>
       </div>
-      <task-form :id="list.id" @add-task="addNewTask"></task-form>
+      <task-form :id="list.id"></task-form>
       <task-list
-        v-for="task in list['tasks']"
+        v-for="task in tasks"
         :key="task.id"
+        :taskListId="task.lists"
         :name="task.name"
         :id="task.id"
         :listId="list.id"
         :completed="task.completed"
         :label="task.label"
-        @change-status="changeStatus"
       ></task-list>
     </div>
   </div>
@@ -38,18 +38,11 @@ export default {
     lists() {
       return this.$store.getters.listsArray;
     },
+    tasks() {
+      return this.$store.getters.tasksArray;
+    },
   },
   methods: {
-    addNewTask(value, id) {
-      const currentList = this.lists.filter((list) => list.id === id);
-      currentList[0].tasks.push(value);
-    },
-    changeStatus(id, listId) {
-      const currentList = this.lists.filter((list) => list.id === listId);
-      const currentTask = currentList[0].tasks.filter((task) => task.id === id);
-
-      currentTask[0].completed = !currentTask[0].completed;
-    },
     removeList(index) {
       this.lists.splice(index, 1);
     },
