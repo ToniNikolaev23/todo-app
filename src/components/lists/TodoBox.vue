@@ -4,7 +4,7 @@
       {{ name }}
     </h2>
     <form v-if="isEditting" @submit.prevent="edit(id)" class="edit-form">
-      <input type="text" v-model="editListName" :placeholder="name" />
+      <input type="text" v-model="editListName" :placeholder="name" required />
       <button><i class="fas fa-edit"></i></button>
     </form>
     <div class="list-actions">
@@ -39,12 +39,14 @@ export default {
       this.isEditting = !this.isEditting;
     },
     edit(id) {
-      const payloadObject = {
-        el: id,
-        name: this.editListName,
-      };
-      this.$store.commit("editListName", payloadObject);
-      this.isEditting = false;
+      if (this.editListName !== "") {
+        const payloadObject = {
+          el: id,
+          name: this.editListName,
+        };
+        this.$store.commit("editListName", payloadObject);
+        this.isEditting = false;
+      }
     },
   },
 };
