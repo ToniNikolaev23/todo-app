@@ -4,7 +4,7 @@
       type="text"
       name="todo-name"
       v-model.trim="newListName"
-      placeholder="Enter your ToDo list name:"
+      placeholder="ToDo name:"
       class="todo-name"
       required
     />

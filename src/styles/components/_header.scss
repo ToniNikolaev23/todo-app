@@ -43,6 +43,7 @@ header {
 
 .action-btns {
   display: flex;
+  transition: all 0.3s ease-in-out;
   button {
     background: transparent;
     border: none;
@@ -51,6 +52,11 @@ header {
 
   .todo-name {
     position: relative;
+    height: 29px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    width: 200px;
   }
 }
 

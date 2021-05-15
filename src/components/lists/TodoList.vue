@@ -1,16 +1,7 @@
 <template>
   <div class="list-wrap">
     <div class="list-box" v-for="(list, index) in lists" :key="list.id">
-      <div class="list-name">
-        <h2>
-          {{ list.name }}
-          <span
-            ><button @click="editList"><i class="fas fa-edit"></i></button
-            ><button @click="removeList(index)">
-              <i class="fas fa-minus-circle"></i></button
-          ></span>
-        </h2>
-      </div>
+      <todo-box :index="index" :id="list.id" :name="list.name"></todo-box>
       <task-form :id="list.id"></task-form>
       <task-list
         v-for="task in tasks"
@@ -29,10 +20,12 @@
 <script>
 import TaskList from "../tasks/TaskList";
 import TaskForm from "../tasks/TaskForm";
+import TodoBox from "../lists/TodoBox";
 export default {
   components: {
     TaskList,
     TaskForm,
+    TodoBox,
   },
   computed: {
     lists() {
@@ -40,11 +33,6 @@ export default {
     },
     tasks() {
       return this.$store.getters.tasksArray;
-    },
-  },
-  methods: {
-    removeList(index) {
-      this.lists.splice(index, 1);
     },
   },
 };

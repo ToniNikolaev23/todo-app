@@ -8,9 +8,9 @@
     />
 
     <select name="label" id="label" v-model="newLabel">
-      <option value="easy">Easy</option>
+      <option value="low">Low</option>
       <option value="medium">Medium</option>
-      <option value="important">Important</option>
+      <option value="high">High</option>
     </select>
     <button><i class="fas fa-plus-circle"></i></button>
   </form>
@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       newTaskName: "",
-      newLabel: "easy",
+      newLabel: "low",
       uid: 0,
     };
   },
@@ -47,7 +47,7 @@ export default {
       this.uid++;
 
       this.newTaskName = "";
-      this.newLabel = "easy";
+      this.newLabel = "low";
     },
   },
 };

@@ -1,3 +1,12 @@
+input {
+  width: 100%;
+  outline: none;
+
+  &:focus {
+    border-bottom: 2px solid green !important;
+  }
+}
+
 .container {
   width: 100%;
   display: block;

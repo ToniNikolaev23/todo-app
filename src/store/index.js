@@ -8,13 +8,17 @@ export default createStore({
           id: "default-id",
           name: "Default Task List",
         },
+        {
+          id: "default-2",
+          name: "Default Task List 2",
+        },
       ],
       tasks: [
         {
           id: "default-task-id-1",
           name: "First default task",
           completed: false,
-          label: "important",
+          label: "high",
           lists: "default-id",
         },
       ],
@@ -27,8 +31,17 @@ export default createStore({
       localStorage.setItem(payload.id, payload.name);
       state.lists.unshift(payload);
     },
+    editListName(state, payload) {
+      const currentList = state.lists.find((list) => list.id === payload.el);
+      currentList.name = payload.name;
+    },
     addNewTask(state, payload) {
       state.tasks.push(payload);
+    },
+    editTask(state, payload) {
+      const currentTask = state.tasks.find((task) => task.id === payload.id);
+      currentTask.name = payload.name;
+      currentTask.label = payload.label;
     },
     switchTheme(state) {
       const storedTheme = localStorage.getItem("theme-color");
@@ -52,6 +65,4 @@ export default createStore({
       return state.currentTheme;
     },
   },
-  actions: {},
-  modules: {},
 });
