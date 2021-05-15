@@ -1,0 +1,40 @@
+.list-task {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    margin: 1px 5px;
+    padding: 5px;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  h3 {
+    background: $bg-theme-light;
+    color: $color-white;
+  }
+}
+
+.high {
+  border-left: 4px solid $color-button-remove;
+}
+
+.medium {
+  border-left: 4px solid $color-medium;
+}
+
+.low {
+  border-left: 4px solid green;
+}

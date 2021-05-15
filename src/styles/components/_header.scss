@@ -20,9 +20,9 @@ header {
       width: 40px;
       height: 20px;
       border-radius: 10px;
-      background-color: #ccc;
+      background-color: $color-white;
       .switch-handle {
-        background-color: #999;
+        background-color: $bg-theme-light;
         width: 20px;
         height: 20px;
         border-radius: 50%;
@@ -31,7 +31,7 @@ header {
     }
     &.active {
       .switch-path {
-        background-color: #555;
+        background-color: $color-white;
       }
       .switch-handle {
         transform: translateX(20px);
@@ -61,7 +61,7 @@ header {
 }
 
 .fa-plus-circle {
-  color: green;
+  color: $color-buttons;
   background: transparent;
   border: none;
   font-size: 20px;

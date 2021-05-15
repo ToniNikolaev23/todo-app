@@ -12,3 +12,16 @@ h2 {
   margin: 0;
   padding: 0;
 }
+
+button {
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  outline: none;
+
+  &:focus {
+    border-bottom: 2px solid #5f73da !important;
+  }
+}

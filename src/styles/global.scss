@@ -3,14 +3,23 @@
 
 @import "components/header.scss";
 @import "components/lists.scss";
-
-@import "basics/layout.scss";
-@import "basics/buttons.scss";
+@import "components/tasks.scss";
 
 body {
-  background: $bg-theme-light;
-  background: linear-gradient(90deg, $bg-theme-light 0, #c4caef 58%);
   color: $color-theme-light;
+  background-color: $bg-theme-light;
+  background-image: linear-gradient(
+    19deg,
+    #5f73da 0%,
+    #f023e6 32%,
+    #ffcc70 87%
+  );
+}
+
+.container {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 .theme.theme-dark {

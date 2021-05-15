@@ -8,15 +8,18 @@
       {{ name }}
     </h3>
     <form @submit.prevent="edit(id)" v-if="isEditting">
-      <input type="text" v-model="newTaskName" :placeholder="name" />
+      <input type="text" v-model="newTaskName" :placeholder="name" required />
       <select name="label" id="label" v-model="newLabel">
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
       </select>
-      <button><i class="fas fa-edit"></i></button>
+      <button>Save</button>
     </form>
-    <button @click="toggleEditForm"><i class="fas fa-edit"></i></button>
+    <button @click="toggleEditForm" v-if="!isEditting">
+      <i class="fas fa-pen"></i>
+    </button>
+    <button @click="toggleEditForm" v-else>Cancel</button>
   </div>
 </template>
 
@@ -46,14 +49,16 @@ export default {
       this.isEditting = !this.isEditting;
     },
     edit(id) {
-      const taskObject = {
-        id: id,
-        label: this.newLabel,
-        name: this.newTaskName,
-      };
+      if (this.newTaskName !== "") {
+        const taskObject = {
+          id: id,
+          label: this.newLabel,
+          name: this.newTaskName,
+        };
 
-      this.$store.commit("editTask", taskObject);
-      this.isEditting = false;
+        this.$store.commit("editTask", taskObject);
+        this.isEditting = false;
+      }
     },
   },
 };
