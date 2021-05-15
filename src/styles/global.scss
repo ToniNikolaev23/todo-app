@@ -5,6 +5,8 @@
 @import "components/lists.scss";
 @import "components/tasks.scss";
 
+@import "setup/media.scss";
+
 body {
   color: $color-theme-light;
   background-color: $bg-theme-light;

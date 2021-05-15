@@ -1,0 +1,15 @@
+@media screen and (max-width: 767px) {
+  .action-btns .todo-name {
+    width: 125px;
+  }
+  .list-wrap {
+    flex-direction: column;
+  }
+  .list-box {
+    width: 90%;
+    margin: 5px;
+    align-self: center;
+    min-height: auto;
+    height: 300px;
+  }
+}

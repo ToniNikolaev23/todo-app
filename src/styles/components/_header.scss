@@ -13,6 +13,8 @@ header {
   width: 100%;
   text-align: right;
   margin: 0 15px;
+  display: flex;
+  align-items: center;
   .theme-switcher {
     display: inline-block;
     cursor: pointer;

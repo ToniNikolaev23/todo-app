@@ -8,10 +8,6 @@ export default createStore({
           id: "default-id",
           name: "Default Task List",
         },
-        {
-          id: "default-2",
-          name: "Default Task List 2",
-        },
       ],
       tasks: [
         {
