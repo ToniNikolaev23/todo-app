@@ -4,13 +4,12 @@
   }
   .list-wrap {
     flex-direction: column;
-    height: 100vh;
   }
   .list-box {
     width: 90%;
     margin: 5px;
     align-self: center;
-    min-height: auto;
+    min-height: 300px;
     height: 300px;
   }
 }
